@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shrikant-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: star-agile-project
+  template:
+    metadata:
+      labels:
+        app: star-agile-project
+    spec:
+      containers:
+      - name: my-app
+        image: shrikantdevops/healthcare:latest
+        ports:
+        - containerPort: 8082
