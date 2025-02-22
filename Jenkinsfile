@@ -53,13 +53,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    echo 'Deploying to Kubernetes...'
-                    // Apply the deployment and service YAML files
-                    sh '''
-                    whoami
-                    kubectl apply -f deploy.yml
-                    kubectl apply -f ser.yml
-                    '''
+                   kubernetesDeploy (configs: 'deploy.yml' ,kubeconfigId: 'k8sconfigpwd')
                 }
             }
         }
