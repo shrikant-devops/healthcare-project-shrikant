@@ -4,7 +4,6 @@ pipeline {
     environment {
         MAVEN_HOME = tool 'maven'
         DOCKER_HOME = tool 'docker'
-        KUBECONFIG = '/home/jenkins/.minikube/config'
     }
 
     stages {
