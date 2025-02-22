@@ -17,3 +17,17 @@ spec:
         image: shrikantdevops/healthcare:latest
         ports:
         - containerPort: 8082
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: project-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8082
+    targetPort: 8082
+    nodePort: 30001
+  selector:
+    app: star-agile-project 
